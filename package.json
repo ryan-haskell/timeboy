@@ -1,0 +1,31 @@
+{
+  "name": "timeboy",
+  "version": "1.0.0",
+  "description": "Transfer time from Mavenlink!",
+  "main": "index.js",
+  "scripts": {
+    "server": "node index.js",
+    "build": "elm make --output public/app.js ./src/Main.elm",
+    "watch:build": "npm run build && chokidar ./src -c 'npm run build'",
+    "dev": "npm run build && npm run watch:build & npm run server",
+    "start": "npm run build && npm run server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/ryannhg/timeboy"
+  },
+  "keywords": [
+    "mavenlink",
+    "elm",
+    "time"
+  ],
+  "author": "Ryan Haskell-Glatz",
+  "license": "ISC",
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "elm": "^0.18.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
