@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "node index.js",
-    "build": "elm make --output public/app.js ./src/Main.elm",
+    "build": "elm make --yes --output public/app.js ./src/Main.elm",
     "watch:build": "npm run build && chokidar ./src -c 'npm run build'",
     "dev": "npm run build && npm run watch:build & npm run server",
     "start": "npm run build && npm run server"
