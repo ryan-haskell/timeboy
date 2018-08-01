@@ -3,7 +3,16 @@ module Main exposing (main)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-import Json.Decode as Decode exposing (Decoder, dict, keyValuePairs, string, int, field)
+import Json.Decode as Decode
+    exposing
+        ( Decoder
+        , dict
+        , keyValuePairs
+        , string
+        , int
+        , field
+        , nullable
+        )
 import Dict exposing (Dict)
 
 
@@ -133,7 +142,7 @@ timeEntryJsonDecoder =
     Decode.map5 TimeEntryJson
         (field "date_performed" string)
         (field "time_in_minutes" int)
-        (field "notes" string)
+        (field "notes" (nullable string |> Decode.map (Maybe.withDefault "")))
         (field "story_id" string)
         (field "workspace_id" string)
 
