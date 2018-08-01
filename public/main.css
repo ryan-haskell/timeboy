@@ -23,6 +23,7 @@ html, body {
   text-align: center;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 .main-menu__subtitle {
   margin-bottom: .5rem;
@@ -37,7 +38,6 @@ html, body {
 .main-menu__instructions {
   margin-bottom: 0;
   padding-left: .25rem;
-  /*! margin-left: 1.25rem; */
 }
 .textarea__label {
   margin-bottom: 0;
@@ -53,10 +53,12 @@ button {
   background: white;
   color: #333;
   border: 0;
-  margin-left: auto;
   padding: 8px 24px;
   margin-top: 12px;
   font-size: 16px;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+a {
+  color: inherit;
 }
