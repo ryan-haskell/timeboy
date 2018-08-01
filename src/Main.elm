@@ -112,8 +112,6 @@ type alias TimeEntryJson =
 
 type alias UserJson =
     { fullName : String
-    , photoUrl : String
-    , headline : String
     }
 
 
@@ -149,10 +147,8 @@ timeEntryJsonDecoder =
 
 userJsonDecoder : Decoder UserJson
 userJsonDecoder =
-    Decode.map3 UserJson
+    Decode.map UserJson
         (field "full_name" string)
-        (field "photo_path" string)
-        (field "headline" string)
 
 
 storyJsonDecoder : Decoder StoryJson
